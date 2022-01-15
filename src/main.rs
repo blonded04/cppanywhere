@@ -7,9 +7,9 @@ fn handle_connection(mut stream: TcpStream) {
     stream.read(&mut buffer).unwrap();
 
     let (status_line, filename) = if buffer.starts_with(b"GET / HTTP/1.1\r\n") {
-        ("HTTP/1.1 200 OK", "markup.html")
+        ("HTTP/1.1 200 OK", "html/markup.html")
     } else {
-        ("HTTP/1.1 404 NOT FOUND", "404.html")
+        ("HTTP/1.1 404 NOT FOUND", "html/404.html")
     };
 
     let contents = fs::read_to_string(filename).unwrap();
