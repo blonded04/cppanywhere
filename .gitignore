@@ -47,5 +47,5 @@ Cargo.lock
 *.pdb
 
 # JetBrains Idea stuff.
-.DS_Store
-.idea
+.DS_Store/
+.idea/
