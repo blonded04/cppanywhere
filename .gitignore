@@ -49,3 +49,4 @@ Cargo.lock
 # JetBrains Idea stuff.
 .DS_Store/
 .idea/
+*.iml
