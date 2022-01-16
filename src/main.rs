@@ -1,3 +1,4 @@
+use cppanywhere::ThreadPool;
 use std::fs;
 use std::io::{Read, Write};
 use std::net::{TcpListener, TcpStream};
@@ -25,9 +26,11 @@ fn handle_connection(mut stream: TcpStream) {
 }
 
 fn main() {
-    let listener = TcpListener::bind("127.0.0.1:7777").unwrap();
+    let listener = TcpListener::bind("127.0.0.1:2004").unwrap();
+    let pool = ThreadPool::new(8);
+
     for stream in listener.incoming() {
         let stream = stream.unwrap();
-        handle_connection(stream);
+        pool.execute(|| handle_connection(stream));
     }
 }
