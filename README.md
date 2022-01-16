@@ -1,4 +1,2 @@
-# cppanywhere
-Rust server that runs your C++ code.
-
-* Just copy a `main` binary into `cpp/` folder, `cargo run` runs it on your local server.
+# Multithreading server
+Just a Rust server exercise, last project from the [official Rust textbook](https://doc.rust-lang.org/book/).
